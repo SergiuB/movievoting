@@ -29,7 +29,7 @@ describe('application logic', () => {
     it('takes the next two entries under vote', () => {
       const state = fromJS({
         entries: ['Trainspotting', '28 Days Later', 'Sunshine', 'Independence Day']
-      })
+      });
       const nextState = next(state);
       expect(nextState).to.equal(fromJS({
         vote: {
@@ -50,7 +50,7 @@ describe('application logic', () => {
           }
         },
         entries: ['Sunshine', 'Millions', '127 Hours']
-      })
+      });
       const nextState = next(state);
       expect(nextState).to.equal(fromJS({
         vote: {
@@ -102,7 +102,7 @@ describe('application logic', () => {
     it('creates a tally for the voted entry', () => {
       const state = fromJS({
         pair: ['Trainspotting', '28 Days Later']
-      })
+      });
       const nextState = vote(state, 'Trainspotting');
       expect(nextState).to.equal(fromJS({
         pair: ['Trainspotting', '28 Days Later'],
@@ -120,7 +120,7 @@ describe('application logic', () => {
           'Trainspotting': 2,
           '28 Days Later': 3
         }
-      })
+      });
       const nextState = vote(state, 'Trainspotting');
       expect(nextState).to.equal(fromJS({
         pair: ['Trainspotting', '28 Days Later'],
